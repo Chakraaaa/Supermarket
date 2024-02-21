@@ -1,0 +1,41 @@
+.header{
+	height : 80px;
+	background-color: grey;
+}
+
+.titre{
+	font-size: 30px ;
+	color: black;
+	margin-top: 15px;
+
+}
+
+.mid{
+	height: 651px;
+	background-color: silver;
+}
+
+.center{
+	margin-top: 150px;
+}
+
+.nbr2{
+	margin-top: 20px;
+}
+
+.op{
+	margin-top: 20px;
+}
+
+.cal{
+	margin-top: 30px;
+}
+
+.res{
+	color : white;
+	margin-top: 15px;
+}
+ .test{
+	background-color: red;
+	height: 200px;
+ }
