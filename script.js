@@ -1,77 +1,42 @@
 var panier = [];
 
+console.log(panier)
+
 function ajoute_fruit(fruit){
     panier.push(fruit)
     console.log(panier)
     return panier
 }
 
-function nbr_fruits() {
-    let nbr_bananes = 0;
-    let nbr_pommes = 0;
-    let nbr_cerises = 0;
-    let nbr_framboises = 0;
-    let nbr_abricot = 0;
-    let nbr_papaye = 0;
-    let nbr_ananas = 0;
-    let nbr_avocat = 0;
-    let nbr_cassis = 0;
-    let nbr_citron = 0;
-    let nbr_fraise = 0;
-    let nbr_kiwi = 0;
-    
+function affiche_panier() {
+    let fruits = {"banane": 0,"pomme": 0,"cerise": 0,"framboise": 0,"abricot": 0,"papaye": 0,"ananas": 0,"avocat": 0,"cassis": 0,"citron": 0,"fraise": 0,"kiwi": 0};
+    let total_prix = 0;
+    let prix = 0;
     for (let i = 0; i < panier.length; i++) {
-        switch (panier[i]) {
-            case "banane":
-                nbr_bananes++;
-                break;
-            case "pomme":
-                nbr_pommes++;
-                break;
-            case "cerise":
-                nbr_cerises++;
-                break;
-            case "framboise":
-                nbr_framboises++;
-                break;
-            case "abricot":
-                nbr_abricot++;
-                break;
-            case "papaye":
-                nbr_papaye++;
-                break;
-            case "ananas":
-                nbr_ananas++;
-                break;
-            case "avocat":
-                nbr_avocat++;
-                break;
-            case "cassis":
-                nbr_cassis++;
-                break;
-            case "citron":
-                nbr_citron++;
-                break;
-            case "fraise":
-                nbr_fraise++;
-                break;
-            case "kiwi":
-                nbr_kiwi++;
-                break;
+        fruits[panier[i]] = fruits[panier[i]] + 1;
+        let prix_texte = document.getElementById(`prix_${panier[i]}`).innerText;
+        prix_texte = prix_texte.replace('€', '');
+        prix = parseFloat(prix_texte);
+        total_prix += prix;
+//  total_prix = parseFloat(total_prix.toFixed(2)); Pour arrondir le résultat avec 2 chiffres après la virgule, mais fonctionne pas.
+    }
+    let listeFruits = "";
+    for (let fruit in fruits) {
+        if (fruits[fruit] > 0) {
+            listeFruits += `Nombre de ${fruit}s: ${fruits[fruit]}<br>`;
         }
     }
-    
-    console.log("Nombre de bananes:", nbr_bananes);
-    console.log("Nombre de pommes:", nbr_pommes);
-    console.log("Nombre de cerises:", nbr_cerises);
-    console.log("Nombre de framboises:", nbr_framboises);
-    console.log("Nombre d'abricots:", nbr_abricot);
-    console.log("Nombre de papayes:", nbr_papaye);
-    console.log("Nombre d'ananas:", nbr_ananas);
-    console.log("Nombre d'avocats:", nbr_avocat);
-    console.log("Nombre de cassis:", nbr_cassis);
-    console.log("Nombre de citrons:", nbr_citron);
-    console.log("Nombre de fraises:", nbr_fraise);
-    console.log("Nombre de kiwis:", nbr_kiwi);
+    document.getElementById("liste").innerHTML = listeFruits;
+    document.getElementById("total_prix").innerHTML = "TOTAL : " + total_prix + "€"
 }
+
+function sup_panier(){
+    panier = [];
+    document.getElementById("liste").innerHTML = "";
+    document.getElementById("total_prix").innerHTML = ""; 
+}
+
+
+
+
 

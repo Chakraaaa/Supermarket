@@ -1,6 +1,15 @@
 .header{
-	height : 80px;
-	background-color: grey;
+	height : 70px;
+}
+
+.header2{
+	height: 60px;
+	background-color: #D3D3D3;
+}
+
+.taille_logo{
+	height: 85px;
+	width: 120px;
 }
 
 .titre{
@@ -11,8 +20,7 @@
 }
 
 .mid{
-	height: 651px;
-	background-color: silver;
+	height: 450px;
 }
 
 .center{
@@ -39,3 +47,20 @@
 	background-color: red;
 	height: 200px;
  }
+
+
+ .taille_img{
+	height: 45px;
+	width: 45px;
+ }
+
+ .img_panier{
+	height: 65px;
+	width: 80px;
+ }
+
+ .footer{
+	height: 200px;
+	background-color: #D3D3D3;	
+ }
+
